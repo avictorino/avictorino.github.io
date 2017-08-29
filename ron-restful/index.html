@@ -1,0 +1,853 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>RON API Restful documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#ron-restful-api-reference" class="toc-h1 toc-link" data-title="RON Restful API Reference">RON Restful API Reference</a>
+          </li>
+          <li>
+            <a href="#data-types" class="toc-h1 toc-link" data-title="DATA TYPES">DATA TYPES</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-autorization" class="toc-h2 toc-link" data-title="DATA TYPES">Http Autorization</a>
+                  </li>
+                  <li>
+                    <a href="#datetime-format" class="toc-h2 toc-link" data-title="DATA TYPES">Datetime format</a>
+                  </li>
+                  <li>
+                    <a href="#boolean-fields" class="toc-h2 toc-link" data-title="DATA TYPES">Boolean fields</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#connection" class="toc-h1 toc-link" data-title="Connection">Connection</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ping" class="toc-h2 toc-link" data-title="Connection">Ping</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#readcurrentlogin" class="toc-h2 toc-link" data-title="User">readCurrentLogin</a>
+                  </li>
+                  <li>
+                    <a href="#writecurrentlogin" class="toc-h2 toc-link" data-title="User">writeCurrentLogin</a>
+                  </li>
+                  <li>
+                    <a href="#readcreditstatus" class="toc-h2 toc-link" data-title="User">readCreditStatus</a>
+                  </li>
+                  <li>
+                    <a href="#readpaymentoptions" class="toc-h2 toc-link" data-title="User">readPaymentOptions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#operator" class="toc-h1 toc-link" data-title="Operator">Operator</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#readcreditcardtypes" class="toc-h2 toc-link" data-title="Operator">readCreditCardTypes</a>
+                  </li>
+                  <li>
+                    <a href="#readhosts" class="toc-h2 toc-link" data-title="Operator">readHosts</a>
+                  </li>
+                  <li>
+                    <a href="#readhostdetails" class="toc-h2 toc-link" data-title="Operator">readHostDetails</a>
+                  </li>
+                  <li>
+                    <a href="#readpaxtypes" class="toc-h2 toc-link" data-title="Operator">readPaxTypes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#product" class="toc-h1 toc-link" data-title="Product">Product</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#readtours" class="toc-h2 toc-link" data-title="Product">readTours</a>
+                  </li>
+                  <li>
+                    <a href="#readtourdetails" class="toc-h2 toc-link" data-title="Product">readTourDetails</a>
+                  </li>
+                  <li>
+                    <a href="#readtourtimes" class="toc-h2 toc-link" data-title="Product">readTourTimes</a>
+                  </li>
+                  <li>
+                    <a href="#readtourbases" class="toc-h2 toc-link" data-title="Product">readTourBases</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#readtourpickups" class="toc-h1 toc-link" data-title="readTourPickups">readTourPickups</a>
+          </li>
+          <li>
+            <a href="#reservation" class="toc-h1 toc-link" data-title="Reservation">Reservation</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a target="_blank" href='https://respax.com.au'>Respax</a></li>
+            <li><a target="_blank" href='https://docs.respax.com/confluence/display/RONR/RON+XML+API+Reference'>RON XMLRPC documentation</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='ron-restful-api-reference'>RON Restful API Reference</h1>
+<p>The Respax Operator Network (RON) Restful API is the window into a real-time tour operator portal network connecting in real-time to major Australian and New Zealand tour operators. The Respax Operator Network enables development of interfaces to directly interact with each operator retrieving tour details with imagery, check availability, check prices and commit bookings directly into the remote operators system.  For a more detailed overview of RON, please checkout the RON Introduction page to get started with your interface.  You will need to register as a user on <a href="http://ron.respax.com.au">Respax</a>. As part of the registration process, you will be sent an email with your user details.</p>
+<h1 id='data-types'>DATA TYPES</h1><h2 id='http-autorization'>Http Autorization</h2>
+<ul>
+<li>The username and password are combined with a single colon (:).</li>
+<li>The resulting string is encoded into an octet sequence.</li>
+<li>The resulting string is encoded using a variant of Base64.</li>
+<li>The authorization method and a space is then prepended to the encoded string.</li>
+</ul>
+
+<p><code>Authorization: Basic XXXXXXXXXXXXXXX==</code></p>
+
+<p>Reference: <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">Basic access authentication</a></p>
+<h2 id='datetime-format'>Datetime format</h2>
+<p>All date and times follow the <code>ISO_8601</code> specification. Reference: <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></p>
+<h2 id='boolean-fields'>Boolean fields</h2>
+<p>JSON true and false. Reference: <a href="http://json-schema.org/latest/json-schema-core.html">JSON Schema: A Media Type for Describing JSON Documents</a></p>
+<h1 id='connection'>Connection</h1><h2 id='ping'>Ping</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization: Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+ <span class="s1">'http://127.0.0.1:8036/ping.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"pong"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This simple test function returns the string &quot;pong&quot; if your json call has been successful.</p>
+<h1 id='user'>User</h1><h2 id='readcurrentlogin'>readCurrentLogin</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+ <span class="s1">'http://127.0.0.1:8036/read-current-login.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Renaud"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonnin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expedia1733"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rbonnin@expedia.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1460</span><span class="w">
+        </span><span class="s2">"organisation"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"reservation_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;44 207 019 2946&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reservation_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;rbonnin@expedia.com&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"org_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1733</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Expedia&gt;"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array of two elements. The first element containing the details of the currently logged in user and the second element the details of the current user&#39;s organisation.</p>
+<h2 id='writecurrentlogin'>writeCurrentLogin</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   -d <span class="s1">'{
+        "first_name": "TReMS",
+        "last_name": "Developer",
+        "user_id": "trems1748",
+        "email": "craig.shield@resmt.com.au",
+        "phone": "07 4047 9016",
+        "id": 1465,
+        "password": "XXXxxxXXX"
+        "organisation":{
+            "reservation_phone": "07 4047 9016",
+            "reservation_email": " craig.shield@resmt.com.au",
+            "org_id": null,
+            "id": 1748,
+            "name": "Tourism Resource Management Solutions (TReMS)"
+        },
+   }'</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/write-current-login.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Allows the currently authenticated user to update his user and organisation details. Returns the boolean value True if successful. It is not necessary to include all fields listed below in the parameter. Only the fields requiring an update must be provided.</p>
+
+<aside class="notice">
+    Note that if you change the password, the new password will be required for the new requests.
+</aside>
+
+<aside class="notice">
+    The user.id and user.organisation.id must be the same as the basic authorization.
+</aside>
+<h2 id='readcreditstatus'>readCreditStatus</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+    <span class="s1">'http://127.0.0.1:8036/read-payment-options-STB.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns the credit status of the current user at the host specified.</p>
+<h2 id='readpaymentoptions'>readPaymentOptions</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/read-payment-options-STB.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"payment_options"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full-ccard"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The full amount is collected via credit card at time of booking."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full-pob"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The full amount is collected by the operator on day of travel."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comm-ccard/bal-pob"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A $110 deposit/administration fee is collected via credit card at time of booking. The balance is payable at the drop zone on the day of your jump."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array of zero or more associative arrays each representing a payment option that is valid for the currently logged in user at the host specified.</p>
+<h1 id='operator'>Operator</h1><h2 id='readcreditcardtypes'>readCreditCardTypes</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/read-credit-card-types-STB.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"credit_card_types"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mc"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"web_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Master Card"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"visa"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"web_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visa"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array of zero or more associative arrays each representing a credit card type supported by the host for processing &#39;ccard&#39; payments.</p>
+<h2 id='readhosts'>readHosts</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/read-hosts.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"hosts"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"secure"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"online"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"server_up"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"host_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skydive The Beach"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STB"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"secure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"online"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"server_up"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"host_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TA)OA"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operator not registered or disabled to use reslogic restful api"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array of associative arrays each containing the host id, name and a boolean value indicating the current state of the host.</p>
+<h2 id='readhostdetails'>readHostDetails</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+ <span class="s1">'http://127.0.0.1:8036/read-host-details-STB.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"host_details"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"secure"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02 4225 8444"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accounts"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"minimum_tour_date_offset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wollongong, Australia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"online"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a.jones@skydive.com.au"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pob_credit_card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mandatory_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reservation_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a.jones@skydive.com.au"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reservations"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"technical_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02 4225 8444"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reservation_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02 4225 8444"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skydive The Beach"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"technical"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Technical"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"technical_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a.jones@skydive.com.au"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mandatory_origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cancellation_offset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"config_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array containing a single associative array of extended information for the host including contact information.</p>
+<h2 id='readpaxtypes'>readPaxTypes</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/read-pax-types-STB.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pax_types"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"long_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOCs"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"web_association"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOC"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"long_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Defined Pax"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"web_association"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UDf"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"long_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Student"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"web_association"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stu"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"long_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"web_association"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ad"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an indexed array of associative arrays containing the pax type information for the host.</p>
+<h1 id='product'>Product</h1><h2 id='readtours'>readTours</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/read-tours-STB.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+   </span><span class="s2">"tours"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"notification_id"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"default_sell_infant"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"code"</span><span class="p">:</span><span class="s2">"WOL14TN"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"new_matrix"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"package_components"</span><span class="p">:[</span><span class="w">
+
+         </span><span class="p">],</span><span class="w">
+         </span><span class="s2">"default_cost_infant"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"multiple_pax"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"default_sell_foc"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"type_code"</span><span class="p">:</span><span class="s2">"tour"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"detailed_pickups"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"free_sell"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"operator"</span><span class="p">:</span><span class="s2">"STBWOL"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"message"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"tour_duration"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Experience the dark side of skydiving. Freefall under the full moon and twinkling star-studded sky directly over the inky black ocean of Wollongong!"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"category"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"to_suburb_id"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"force_pax_id"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"show_availability"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"organisation"</span><span class="p">:</span><span class="s2">"STB"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"can_edit_component"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"udef1_caption"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"check_duplicate_components"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"from_suburb_id"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bases"</span><span class="p">:[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"discount_child"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"web_enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"discount_adults"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">104</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"disc_type_child"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"discount_infant"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"no_pax_infant"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"short_desc"</span><span class="p">:</span><span class="s2">"Tandem"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"default"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"pickup"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"long_desc"</span><span class="p">:</span><span class="s2">"Sydney-Wollongong 14,000ft Night Tandem Skydive"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"no_pax_adults"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"options_incl"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"disc_type_adults"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"subbases"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Night"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"basis"</span><span class="p">:</span><span class="mi">104</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"default"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"pax_threshold"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"web_enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"resource_label"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"pax_per_resource"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"default_nights"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"default_resources"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">158</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"accommodation_model"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">],</span><span class="w">
+               </span><span class="s2">"disc_type_infant"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"pickup_enabled"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"is_pickup"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"is_dropoff"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"tour"</span><span class="p">:</span><span class="s2">"WOL14TN"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"is_package"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"no_pax_child"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="s2">"default_sell_adult"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"latitude"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"udef1_enabled"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"ticketable"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"one_pax_per_booking"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"default_cost_child"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"matrix_code"</span><span class="p">:</span><span class="s2">"PBS"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"flavour_id"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"udef1_separate_availability"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"max_pax"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"infant_not_general_availability"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"default_sell_child"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"detailed_pax"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Sydney-Wollongong 14,000 ft Night Tandem"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"group_id"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"web_enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"component_only"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"components"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"release_component_leg"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"default_cost_foc"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"longitude"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"times"</span><span class="p">:[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"discount_child"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"web_enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"discount_adults"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">104</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"disc_type_child"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"discount_infant"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"no_pax_infant"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"short_desc"</span><span class="p">:</span><span class="s2">"Tandem"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"default"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"pickup"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"long_desc"</span><span class="p">:</span><span class="s2">"Sydney-Wollongong 14,000ft Night Tandem Skydive"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"no_pax_adults"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"options_incl"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"disc_type_adults"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"disc_type_infant"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"pickup_enabled"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"is_pickup"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"is_dropoff"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"tour"</span><span class="p">:</span><span class="s2">"WOL14TN"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"is_package"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"no_pax_child"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="s2">"extras"</span><span class="p">:[</span><span class="w">
+
+         </span><span class="p">],</span><span class="w">
+         </span><span class="s2">"gl_code"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"ticket_description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"udef1_general_availability"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"check_availability_on_change"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"ticket_comment"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"wait_list"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"tour_comment"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"default_cost_adult"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array of associative arrays each containing the tour code and tour name for all the publicly visible tours from the specified host.</p>
+<h2 id='readtourdetails'>readTourDetails</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/read-tour-details-STB-WOL14T.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"tour_details"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WOL14T"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"travel_terms"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"operator_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STBWOL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1. Night Jump gift vouchers are valid for a maximum of twelve (12) months from the date of issue.</span><span class="se">\n</span><span class="s2">2. Gift vouchers are non-refundable but may be transferred to another person.</span><span class="se">\n</span><span class="s2">3. Restrictions apply for weight, age, and medical conditions. Give us a call for more information."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"operator_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sydney-Wollongong 14,000 ft Tandem Skydive"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"operator_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STBWOL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"force_pax_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"free_sell"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"one_pax_per_booking"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an associative array of extended tour information from the host for the specified tour code.</p>
+<h2 id='readtourtimes'>readTourTimes</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+ <span class="s1">'http://127.0.0.1:8036/read-tour-times-STB-WOL14T.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"tour_times"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"return_trip"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WOL14T"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">498</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"return_trip"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WOL14T"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">506</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array of associative arrays from the host each containing the details of a departure time for the specified tour.</p>
+<h2 id='readtourbases'>readTourBases</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/read-tour-bases-STB-WOL14T.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"tour_bases"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"tour_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WOL14T"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basis_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basis_web_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subbasis_web_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pax_per_resource"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basis_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tandem"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subbasis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subbasis_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skydive"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array of associative arrays from the host each containing the details of a fare basis and type for the specified tour. Only records where both ysnWebEnabledBasis and ysnWebEnabledSubBasis are true should be presented to the client. Bookings with disabled bases or subbases will be rejected by the host.</p>
+<h1 id='readtourpickups'>readTourPickups</h1><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+ <span class="s1">'http://127.0.0.1:8036/read-tour-pickups-STB-WOL14T-498.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"tour_pickups"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"route_time_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">523</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"show_by_default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"route_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1NOT:523"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pickup_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pickup_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">225</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*I don't need a transfer"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pickup_description_route"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*I don't need a transfer at 08:00 (1NOT)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"route_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1NOT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pickup_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1NOT:523:225"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pickup_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*I don't need a transfer at 08:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an array of associative arrays from the host each containing the details of a pickup location and time for the specified tour, time and basis combination. Tour date is optional and if provided, the pickup list will be filtered by the operational bus routes for the day. Note that operational bus routes is a feature not yet supported by all hosts. If a host does not support operational bus routes the pickup list will not change when a tour date is provided.</p>
+
+<p>To uniquely and correctly identify a pickup, you must specify the pickup route code, pickup time id and pickup id. The recommended method of doing this is to use the strPickupKey field when selecting a pickup and when writing a reservation.</p>
+<h1 id='reservation'>Reservation</h1><h1 id='errors'>Errors</h1>
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request sucks.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

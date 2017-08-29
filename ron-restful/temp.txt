@@ -1,0 +1,136 @@
+
+<!--img src="/images/respax-logo-transparent-300x83.png"-->
+
+
+# RON Restful API Reference
+
+
+The Respax Operator Network (RON) Restful API is the window into a real-time tour operator portal network connecting in real-time to major Australian and New Zealand tour operators. The Respax Operator Network enables development of interfaces to directly interact with each operator retrieving tour details with imagery, check availability, check prices and commit bookings directly into the remote operators system.  For a more detailed overview of RON, please checkout the RON Introduction page to get started with your interface.  You will need to register as a user on http://ron.respax.com.au. As part of the registration process, you will be sent an email with your user details.
+
+
+
+
+
+
+# HTTP AUTHORIZATION
+
+### The Authorization field is constructed as follows:
+
+* The username and password are combined with a single colon (:).
+* The resulting string is encoded into an octet sequence.
+* The resulting string is encoded using a variant of Base64.
+* The authorization method and a space is then prepended to the encoded string.
+
+`Authorization: Basic ZXhwZWRpYTE3ABCFWRWtTMWdkbQ==`
+
+Reference: [Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+
+# DATA TYPES
+
+### Datetime format
+All date and times follow the `ISO_8601` specification. Reference: [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+
+### Boolean fields
+JSON true and false. Reference: [JSON Schema: A Media Type for Describing JSON Documents](http://json-schema.org/latest/json-schema-core.html)
+
+
+
+
+
+#PING
+```shell
+curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -H "Authorization: Basic ZXhwZWRpYTE3ABCFWRWtTMWdkbQ==" \
+ 'http://127.0.0.1:8036/ping.json'
+```
+```json
+    {
+        "result":"pong"
+    }
+```
+
+This simple test function returns the string "pong" if your json call has been successful.
+
+#READ CURRENT LOGIN
+```shell
+curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -H "Authorization:Basic ZXhwZWRpYTE3ABCFWRWtTMWdkbQ==" \
+ 'http://127.0.0.1:8036/read-current-login.json'
+```
+```json
+{
+    "user":{
+        "first_name": "Renaud",
+        "last_name": "Bonnin",
+        "user_id": "expedia1733",
+        "email": "rbonnin@expedia.com",
+        "phone": null,
+        "id": 1460
+        "organisation":{
+            "reservation_phone": "<44 207 019 2946>",
+            "reservation_email": "<rbonnin@expedia.com>",
+            "org_id": null,
+            "id": 1733,
+            "name": "<Expedia>"
+        },
+    },
+}
+```
+Returns an array of two elements. The first element containing the details of the currently logged in user and the second element the details of the current user's organisation.
+
+#WRITE CURRENT LOGIN
+
+```shell
+curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -H "Authorization:Basic XXXXXXXXXXXXXX" \
+   -d '{
+        "first_name": "TReMS",
+        "last_name": "Developer",
+        "user_id": "trems1748",
+        "email": "craig.shield@resmt.com.au",
+        "phone": "07 4047 9016",
+        "id": 1465,
+        "password": "XXXxxxXXX"
+        "organisation":{
+            "reservation_phone": "07 4047 9016",
+            "reservation_email": " craig.shield@resmt.com.au",
+            "org_id": null,
+            "id": 1748,
+            "name": "Tourism Resource Management Solutions (TReMS)"
+        },
+   }' \
+   'http://127.0.0.1:8036/write-current-login.json'
+```
+```json
+{
+    "error": false
+}
+```
+
+Allows the currently authenticated user to update his user and organisation details. Returns the boolean value True if successful. It is not necessary to include all fields listed below in the parameter. Only the fields requiring an update must be provided.
+
+<aside class="notice">
+    Note that if you change the password, the new password will be required for the new requests.
+</aside>
+
+<aside class="notice">
+    The user.id and user.organisation.id must be the same as the basic authorization.
+</aside>
+
+#READ CREDIT STATUS
+
+```shell
+    curl -i -X POST \
+        -H "Content-Type:application/json" \
+        -H "Authorization:Basic XXXXXXXXXXX=" \
+        'http://127.0.0.1:8036/read-payment-options-STB.json'
+```
+```json
+{
+    "error": false
+}
+```
+Returns the credit status of the current user at the host specified.
