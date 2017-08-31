@@ -219,19 +219,19 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#ron-restful-api-reference" class="toc-h1 toc-link" data-title="RON Restful API Reference">RON Restful API Reference</a>
-          </li>
-          <li>
-            <a href="#data-types" class="toc-h1 toc-link" data-title="DATA TYPES">DATA TYPES</a>
+            <a href="#ron-introduction" class="toc-h1 toc-link" data-title="RON Introduction">RON Introduction</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-autorization" class="toc-h2 toc-link" data-title="DATA TYPES">Http Autorization</a>
+                    <a href="#integrating-with-ron" class="toc-h2 toc-link" data-title="RON Introduction">Integrating with RON</a>
                   </li>
                   <li>
-                    <a href="#datetime-format" class="toc-h2 toc-link" data-title="DATA TYPES">Datetime format</a>
+                    <a href="#restful-api-reference" class="toc-h2 toc-link" data-title="RON Introduction">Restful API Reference</a>
                   </li>
                   <li>
-                    <a href="#boolean-fields" class="toc-h2 toc-link" data-title="DATA TYPES">Boolean fields</a>
+                    <a href="#data-types" class="toc-h2 toc-link" data-title="RON Introduction">Data Types</a>
+                  </li>
+                  <li>
+                    <a href="#http-autorization" class="toc-h2 toc-link" data-title="RON Introduction">Http Autorization</a>
                   </li>
               </ul>
           </li>
@@ -292,13 +292,39 @@
                   <li>
                     <a href="#readtourbases" class="toc-h2 toc-link" data-title="Product">readTourBases</a>
                   </li>
+                  <li>
+                    <a href="#readtourpickups" class="toc-h2 toc-link" data-title="Product">readTourPickups</a>
+                  </li>
+                  <li>
+                    <a href="#readtourprices" class="toc-h2 toc-link" data-title="Product">readTourPrices</a>
+                  </li>
+                  <li>
+                    <a href="#readtourpricesrange" class="toc-h2 toc-link" data-title="Product">readTourPricesRange</a>
+                  </li>
+                  <li>
+                    <a href="#readtouravailability" class="toc-h2 toc-link" data-title="Product">readTourAvailability</a>
+                  </li>
+                  <li>
+                    <a href="#readtouravailabilityrange" class="toc-h2 toc-link" data-title="Product">readTourAvailabilityRange</a>
+                  </li>
               </ul>
           </li>
           <li>
-            <a href="#readtourpickups" class="toc-h1 toc-link" data-title="readTourPickups">readTourPickups</a>
+            <a href="#reservation" class="toc-h1 toc-link" data-title="Reservation">Reservation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#checkreservation" class="toc-h2 toc-link" data-title="Reservation">checkReservation</a>
+                  </li>
+                  <li>
+                    <a href="#writereservation" class="toc-h2 toc-link" data-title="Reservation">writeReservation</a>
+                  </li>
+                  <li>
+                    <a href="#cancelreservation" class="toc-h2 toc-link" data-title="Reservation">cancelReservation</a>
+                  </li>
+              </ul>
           </li>
           <li>
-            <a href="#reservation" class="toc-h1 toc-link" data-title="Reservation">Reservation</a>
+            <a href="#glossary" class="toc-h1 toc-link" data-title="Glossary">Glossary</a>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
@@ -312,9 +338,31 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='ron-restful-api-reference'>RON Restful API Reference</h1>
+        <h1 id='ron-introduction'>RON Introduction</h1>
+<p>Respax Operator Network (RON) is a real-time tour operator portal network connecting in real-time to major Australian and New Zealand tour operators. The Respax Operator Network enables development of interfaces to directly interact with each operator&#39;s reservation system. Typical usage include retrieving tour details with imagery, commit bookings live, check availability and pricing and much more.</p>
+
+<p>While Respax provide a number of direct booking tools, we encourage system developers for travel agents and online portals to develop their own interfaces to RON and interface directly to their existing systems. Developing against the RON system gives the system integrator a bigger bang for the buck as they are developing against over 60 tour operators with a single development effort.</p>
+
+<p><img src="images/ron.png"></p>
+<h2 id='integrating-with-ron'>Integrating with RON</h2>
+<p>RON provides access to the Respax Operators through a simple Restful API providing real-time availability, booking facilities with immediate confirmations and product content with images. THE RON API can be integrated with the agents system so that their staff can still use their existing, in-house reservation system but be interacting directly with the various Respax Operators.</p>
+
+<p>The RON Restful API is suitable for Travel Agents, Online Agents, Inbound Agents, Online Operators and Online Portals needing to develop a direct system-to-system interface between their system and the Respax Operators</p>
+
+<p>Typical advantages include much reduced handling time for staff when dealing with a booking and much less waiting time for clients as they are interacting directly with the remote systems. Interacting directly with the Operators also means reduced training of the agents consultants. Instead of using individual booking interfaces for each operator, the agents consultants can now book each operator directly through their existing system which they are already trained to use.</p>
+
+<p>RON also provides extensive caching of any information from the operator. The cache categories the data depending on importance of the cache data and how often its changed. Each category have individual cache expiry. For example, tour content and pricing are updated every 7 days. Availability is updated every 2 hours. Any booking is placed directly into the remote systems after a live availability check has been made.</p>
+
+<p>Caching is the key to interacting with multiple remote systems as remote internet connections and systems has various degrees of reliability. The caching creates a much higher availability. Most data is available directly from the cache even if the remote system is down.</p>
+
+<p>Developing against the RON system gives the agent a bigger bang for the buck as they are developing against many tour operators.</p>
+
+<p>Detailed information and syntax to the Respax Operator Network API can be found on <a href="/#restful-api-reference">RON API</a>.</p>
+<h2 id='restful-api-reference'>Restful API Reference</h2>
 <p>The Respax Operator Network (RON) Restful API is the window into a real-time tour operator portal network connecting in real-time to major Australian and New Zealand tour operators. The Respax Operator Network enables development of interfaces to directly interact with each operator retrieving tour details with imagery, check availability, check prices and commit bookings directly into the remote operators system.  For a more detailed overview of RON, please checkout the RON Introduction page to get started with your interface.  You will need to register as a user on <a href="http://ron.respax.com.au">Respax</a>. As part of the registration process, you will be sent an email with your user details.</p>
-<h1 id='data-types'>DATA TYPES</h1><h2 id='http-autorization'>Http Autorization</h2>
+<h2 id='data-types'>Data Types</h2>
+<p>JSON Standards</p>
+<h2 id='http-autorization'>Http Autorization</h2>
 <ul>
 <li>The username and password are combined with a single colon (:).</li>
 <li>The resulting string is encoded into an octet sequence.</li>
@@ -325,9 +373,9 @@
 <p><code>Authorization: Basic XXXXXXXXXXXXXXX==</code></p>
 
 <p>Reference: <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">Basic access authentication</a></p>
-<h2 id='datetime-format'>Datetime format</h2>
+<h3 id='datetime-format'>Datetime format</h3>
 <p>All date and times follow the <code>ISO_8601</code> specification. Reference: <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></p>
-<h2 id='boolean-fields'>Boolean fields</h2>
+<h3 id='boolean-fields'>Boolean fields</h3>
 <p>JSON true and false. Reference: <a href="http://json-schema.org/latest/json-schema-core.html">JSON Schema: A Media Type for Describing JSON Documents</a></p>
 <h1 id='connection'>Connection</h1><h2 id='ping'>Ping</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
@@ -407,6 +455,48 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns the credit status of the current user at the host specified.</p>
+<h3 id='query-string-parameters'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+</tbody></table>
+<h3 id='credit-statuses'>Credit Statuses</h3>
+<table><thead>
+<tr>
+<th>Credit Status</th>
+<th>Payment Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>full</td>
+<td>See <a href="/#readpaymentoptions">readpaymentoptions</a> for information on determining a valid payment option.</td>
+</tr>
+<tr>
+<td>fulllevy</td>
+<td>See <a href="/#readpaymentoptions">readpaymentoptions</a> for information on determining a valid payment option.</td>
+</tr>
+<tr>
+<td>dep</td>
+<td>See  <a href="/#readpaymentoptions">readpaymentoptions</a> for information on determining a valid payment option.</td>
+</tr>
+<tr>
+<td>fullpob</td>
+<td>See <a href="/#readpaymentoptions">readpaymentoptions</a> for information on determining a valid payment option.</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>Stopped agents cannot process payments and must be blocked from making new bookings.</td>
+</tr>
+</tbody></table>
 <h2 id='readpaymentoptions'>readPaymentOptions</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
@@ -433,6 +523,82 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an array of zero or more associative arrays each representing a payment option that is valid for the currently logged in user at the host specified.</p>
+<h3 id='query-string-parameters-2'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+</tbody></table>
+<h3 id='payment-option-fields'>Payment Option Fields:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Unique identifier for the payment option.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Description of the normal method of payment collection when using this payment option.</td>
+</tr>
+<tr>
+<td>is_default</td>
+<td>Indicates the default payment option that is preferred by the operator.</td>
+</tr>
+</tbody></table>
+<h3 id='example-payment-options'>Example Payment Options :</h3>
+<table><thead>
+<tr>
+<th>Payment Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>full-agent</td>
+<td>Full amount is collected by the agent at time of booking.</td>
+</tr>
+<tr>
+<td>bal-agent/levy-pob</td>
+<td>Full amount less the levy is collected by the agent at time of booking. Levy is collected by the tour operator on day of travel.</td>
+</tr>
+<tr>
+<td>comm-agent/bal-pob</td>
+<td>Deposit is collected by the agent at time of booking. Balance is collected by the tour operator on day of travel.</td>
+</tr>
+<tr>
+<td>full-ccard</td>
+<td>Full amount is collected on credit card at time of booking.</td>
+</tr>
+<tr>
+<td>bal-ccard/levy-pob</td>
+<td>Full amount less the levy is collected on credit card at time of booking. Levy is collected by the operator on day of travel.</td>
+</tr>
+<tr>
+<td>full-pob</td>
+<td>Full amount is collected by the tour operator on day of travel.</td>
+</tr>
+<tr>
+<td>comm-ccard/bal-pob</td>
+<td>Deposit is collected on credit card at time of booking. Balance is collected by the tour operator on day of travel.</td>
+</tr>
+<tr>
+<td>comm-agent/bal-ccard</td>
+<td>Deposit is collected by the agent at time of booking. Balance is collected on credit card at time of booking.</td>
+</tr>
+</tbody></table>
+
+<p>When checking or writing a reservation you must provide a payment option that is returned by this function. Any attempt to use a payment option that is not returned by this function will result in the booking being rejected. If the payment option you want to use is not returned by this function, contact the operator to review your credit status.</p>
 <h1 id='operator'>Operator</h1><h2 id='readcreditcardtypes'>readCreditCardTypes</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
@@ -454,6 +620,44 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an array of zero or more associative arrays each representing a credit card type supported by the host for processing &#39;ccard&#39; payments.</p>
+<h3 id='query-string-parameters-3'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+</tbody></table>
+<h3 id='credit-card-type-fields'>Credit Card Type Fields:</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Unique identifier for the credit card type.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Description of the credit card type.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>web_fee</td>
+<td>The processing fee charged by the host. This is a percentage applied to the amount being charged.</td>
+<td>float</td>
+</tr>
+</tbody></table>
 <h2 id='readhosts'>readHosts</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
@@ -483,6 +687,38 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an array of associative arrays each containing the host id, name and a boolean value indicating the current state of the host.</p>
+<h3 id='host-list-fields'>Host List Fields:</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>host_name</td>
+<td>Host organisation&#39;s name.</td>
+</tr>
+<tr>
+<td>server_up</td>
+<td>Flag to indicate if the host server is currently reachable.</td>
+</tr>
+<tr>
+<td>online</td>
+<td>Flag to indicate if the host configuration process is complete.</td>
+</tr>
+<tr>
+<td>secure</td>
+<td>Flag to indicate if the RON connection to the operator is secure. Attempting to send credit card payments to an insecure host will generate an error.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Indicates a error</td>
+</tr>
+</tbody></table>
 <h2 id='readhostdetails'>readHostDetails</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
@@ -516,6 +752,116 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an array containing a single associative array of extended information for the host including contact information.</p>
+<h3 id='query-string-parameters-4'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>org_id</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Host organisation&#39;s name.</td>
+</tr>
+<tr>
+<td>server_up</td>
+<td>Flag to indicate if the host server is currently reachable.</td>
+</tr>
+<tr>
+<td>online</td>
+<td>Flag to indicate if the host configuration process is complete.</td>
+</tr>
+<tr>
+<td>config_mode</td>
+<td>Indicates if the host data was drawn from the live or train registrations.</td>
+</tr>
+<tr>
+<td>location</td>
+<td>Approximate geographical location of the host.</td>
+</tr>
+<tr>
+<td>reservation</td>
+<td>Name of reservations staff contact.</td>
+</tr>
+<tr>
+<td>reservation_email</td>
+<td>Reservations email address.</td>
+</tr>
+<tr>
+<td>technical_phone</td>
+<td>Reservations phone number.</td>
+</tr>
+<tr>
+<td>technical</td>
+<td>Name of technical support contact.</td>
+</tr>
+<tr>
+<td>technical_email</td>
+<td>Technical support email address.</td>
+</tr>
+<tr>
+<td>technical_phone</td>
+<td>Technical support phone number.</td>
+</tr>
+<tr>
+<td>accounts</td>
+<td>Name of accounts department contact.</td>
+</tr>
+<tr>
+<td>account_email</td>
+<td>Accounts department email address.</td>
+</tr>
+<tr>
+<td>account_phone</td>
+<td>Accounts department phone number.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Indicates whether the host takes live bookings or requests.</td>
+</tr>
+<tr>
+<td>pob_credit_card</td>
+<td>deprecated</td>
+</tr>
+<tr>
+<td>mandatory_origin</td>
+<td>Host requires the pax origin field in reservations.</td>
+</tr>
+<tr>
+<td>mandatory_source</td>
+<td>Host requires the pax source field in reservations.</td>
+</tr>
+<tr>
+<td>cancellation_offset</td>
+<td>Number of days prior to tour date that reservations for this host can be cancelled via this API. Note that other system rules may still prevent cancellations.</td>
+</tr>
+<tr>
+<td>minimum_tour_date_offset</td>
+<td>Number of days prior to tour date that reservations for this host can be booked via this API. Note that resource expiries may still prevent new reservations.</td>
+</tr>
+<tr>
+<td>strInterfaceVersion</td>
+<td>Version of the API in use by the host.</td>
+</tr>
+</tbody></table>
 <h2 id='readpaxtypes'>readPaxTypes</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
@@ -551,6 +897,98 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an indexed array of associative arrays containing the pax type information for the host.</p>
+<h3 id='query-string-parameters-5'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+</tbody></table>
+<h3 id='pax-type-fields'>Pax Type Fields</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier for the pax type.</td>
+</tr>
+<tr>
+<td>long_description</td>
+<td>The standard pax type label.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>A short pax type label that can be used when there is limited space in the interface.</td>
+</tr>
+<tr>
+<td>web_association</td>
+<td>The pax type price that is associated with this pax type.</td>
+</tr>
+</tbody></table>
+<h3 id='pax-types-and-reservation-fields'>Pax Types and Reservation Fields</h3>
+<p>An operator can customise the pax type labels to suit her products. This can include moving the label of one pax type to another field. For example, the operator could change the infant pax type to a new type called &quot;Family Child&quot; and then change the user defined pax type to infant. The pax types would still need to be booked in the original reservation field names. In the previous example, family children would be booked in the intNoPax_Infant field and infants would be booked in the intNoPax_UDef1 field.</p>
+
+<table><thead>
+<tr>
+<th>Pax Type</th>
+<th>Field</th>
+<th>Default Desc. (Short)</th>
+<th>Default Assoc.</th>
+<th>Example Desc. (Short)</th>
+<th>Example Assoc.</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>intNoPax_Adults</td>
+<td>Adult (Ad)</td>
+<td>1</td>
+<td>Adult (Ad)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>intNoPax_Infant</td>
+<td>Infant (In)</td>
+<td>1</td>
+<td>Family Child (FCh)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>intNoPax_Child</td>
+<td>Child (Ch)</td>
+<td>3</td>
+<td>Child (Ch)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>intNoPax_FOC</td>
+<td>FOC (FOC)</td>
+<td>4</td>
+<td>Concession (Cn)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>intNoPax_UDef1</td>
+<td>User Defined (Udef)</td>
+<td>5</td>
+<td>Infant (In)</td>
+<td>1</td>
+</tr>
+</tbody></table>
 <h1 id='product'>Product</h1><h2 id='readtours'>readTours</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
@@ -691,11 +1129,26 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an array of associative arrays each containing the tour code and tour name for all the publicly visible tours from the specified host.</p>
+<h3 id='query-string-parameters-6'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+</tbody></table>
 <h2 id='readtourdetails'>readTourDetails</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
    <span class="s1">'http://127.0.0.1:8036/read-tour-details-STB-WOL14T.json'</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
     </span><span class="s2">"tour_details"</span><span class="p">:{</span><span class="w">
         </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WOL14T"</span><span class="p">,</span><span class="w">
@@ -713,11 +1166,67 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an associative array of extended tour information from the host for the specified tour code.</p>
+<h3 id='query-string-parameters-7'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String</td>
+<td>Unique identifier for the tour.</td>
+</tr>
+</tbody></table>
+<h3 id='tour-details-fields'>Tour Details Fields</h3>
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>strTourCode</td>
+<td>Identifier for the tour.</td>
+</tr>
+<tr>
+<td>strTourName</td>
+<td>Name of the tour.</td>
+</tr>
+<tr>
+<td>strTourComment</td>
+<td>Special instructions and additional information from the operator.</td>
+</tr>
+<tr>
+<td>bitTourFlavours(currently not supported)</td>
+<td>Bitwise value that alters behavior of the booking process</td>
+</tr>
+<tr>
+<td>ysnForcePaxID(currently not supported)</td>
+<td>Indicates if a user record must be created for the pax when committing the reservation.</td>
+</tr>
+<tr>
+<td>ysn1PerRes(currently not supported)</td>
+<td>Indicates if only one pax can be assigned to a reservation.</td>
+</tr>
+<tr>
+<td>arrTravelTerms</td>
+<td>An array of zero or more terms and conditions for travel from each of the parties involved in the reservation. (tour owner, tour operator, booking agent) <code>The travel terms field is not yet supported by all operators.</code></td>
+</tr>
+</tbody></table>
 <h2 id='readtourtimes'>readTourTimes</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
  <span class="s1">'http://127.0.0.1:8036/read-tour-times-STB-WOL14T.json'</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
     </span><span class="s2">"tour_times"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -739,11 +1248,31 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an array of associative arrays from the host each containing the details of a departure time for the specified tour.</p>
+<h3 id='query-string-parameters-8'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String</td>
+<td>Unique identifier for the tour.</td>
+</tr>
+</tbody></table>
 <h2 id='readtourbases'>readTourBases</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
    <span class="s1">'http://127.0.0.1:8036/read-tour-bases-STB-WOL14T.json'</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
     </span><span class="s2">"tour_bases"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"tour_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WOL14T"</span><span class="p">,</span><span class="w">
@@ -761,11 +1290,31 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns an array of associative arrays from the host each containing the details of a fare basis and type for the specified tour. Only records where both ysnWebEnabledBasis and ysnWebEnabledSubBasis are true should be presented to the client. Bookings with disabled bases or subbases will be rejected by the host.</p>
-<h1 id='readtourpickups'>readTourPickups</h1><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+<h3 id='query-string-parameters-9'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String</td>
+<td>Unique identifier for the tour.</td>
+</tr>
+</tbody></table>
+<h2 id='readtourpickups'>readTourPickups</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
    -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
  <span class="s1">'http://127.0.0.1:8036/read-tour-pickups-STB-WOL14T-498.json'</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
     </span><span class="s2">"tour_pickups"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"route_time_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">523</span><span class="p">,</span><span class="w">
@@ -785,7 +1334,662 @@
 <p>Returns an array of associative arrays from the host each containing the details of a pickup location and time for the specified tour, time and basis combination. Tour date is optional and if provided, the pickup list will be filtered by the operational bus routes for the day. Note that operational bus routes is a feature not yet supported by all hosts. If a host does not support operational bus routes the pickup list will not change when a tour date is provided.</p>
 
 <p>To uniquely and correctly identify a pickup, you must specify the pickup route code, pickup time id and pickup id. The recommended method of doing this is to use the strPickupKey field when selecting a pickup and when writing a reservation.</p>
-<h1 id='reservation'>Reservation</h1><h1 id='errors'>Errors</h1>
+<h3 id='query-string-parameters-10'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String</td>
+<td>Unique identifier for the tour.</td>
+</tr>
+<tr>
+<td>tour_time_id</td>
+<td>Integer</td>
+<td>Unique identifier for the tour time.</td>
+</tr>
+</tbody></table>
+<h2 id='readtourprices'>readTourPrices</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/read-tour-prices-STB-WOL14T-23-25-498-2017-10-06.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"tour_prices"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"child_tour_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"def1_tour_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">329</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_tour_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pay_on_board_card_fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_commission"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.414965986394556</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_ley"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"def1_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infant_tour_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infanti_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deposit_card_fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="mi">329</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_card_fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"payment_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full-agent"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"forc_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infant_tour_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_tour_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_tour_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pay_on_board"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"card_fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"boolChildAssoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"def1_tour_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_tour_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_tour_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">294</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an associative array from the host containing price, levy and commission information for adult, child, infant, foc and udef pax types. If the tour sell value for a pax type is calculated as zero or the pax type assoc flag is false, that pax type should be disabled on the client. Pickup and dropoff ids are optional but should be provided if a pickup is selected in the booking.</p>
+<h3 id='query-string-parameters-11'>Query string parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String</td>
+<td>Unique identifier for the tour.</td>
+</tr>
+<tr>
+<td>basis_id</td>
+<td>Integer</td>
+<td>Identifier for the basis.</td>
+</tr>
+<tr>
+<td>subbasis_id</td>
+<td>String</td>
+<td>Identifier for the subbasis.</td>
+</tr>
+<tr>
+<td>tour_time_id</td>
+<td>Integer</td>
+<td>Unique identifier for the tour time.</td>
+</tr>
+<tr>
+<td>tour_date</td>
+<td>Integer</td>
+<td>Date using the ISO_8601 format.</td>
+</tr>
+</tbody></table>
+<h2 id='readtourpricesrange'>readTourPricesRange</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   -d <span class="s1">'[
+           {
+              "host_id":"STB",
+              "tour_code":"WOL14T",
+              "basis_id":23,
+              "subbasis_id":25,
+              "tour_date":"2017-10-06",
+              "tour_time_id":1120
+           },
+           {
+              "host_id":"NECL",
+              "tour_code":"ET20",
+              "basis_id":9,
+              "subbasis_id":22,
+              "tour_date":"2017-10-06",
+              "tour_time_id":51
+           }
+        ]'</span> <span class="se">\</span>
+    <span class="s1">'http://127.0.0.1:8036/read-price-range-ron2.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"prices"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"infant_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_time_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infant_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ET20"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"payment_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comm-agent/bal-pob"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infant_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NECL:ET20:9:22:51:2017-10-06"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-06"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NECL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subbasis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infant_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"infant_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_time_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1120</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">244</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infant_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_commission"</span><span class="p">:</span><span class="w"> </span><span class="mf">45.08196721311475</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WOL14T"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"payment_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full-agent"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"child_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infant_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STB:WOL14T:23:25:1120:2017-10-06"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-06"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STB"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subbasis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"infant_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"foc_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_tour_curr_levy"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"adult_assoc"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_tour_curr_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"udef1_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This function allows the multiple price queries to be processed in one call. The product list arrays are returned with the price information appended. If any call produces a fault, the function continues running and returns the individual fault as part of the results. Note that price ranges cannot include bus route pricing. Each item in the product list must contain a host, tour code, basis id, subbasis id and time id.</p>
+<h3 id='post-payload-parameters-array'>Post Payload parameters  ( array ):</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String</td>
+<td>Unique identifier for the tour.</td>
+</tr>
+<tr>
+<td>basis_id</td>
+<td>Integer</td>
+<td>Identifier for the basis.</td>
+</tr>
+<tr>
+<td>subbasis_id</td>
+<td>String</td>
+<td>Identifier for the subbasis.</td>
+</tr>
+<tr>
+<td>tour_time_id</td>
+<td>Integer</td>
+<td>Unique identifier for the tour time.</td>
+</tr>
+<tr>
+<td>tour_date</td>
+<td>Integer</td>
+<td>Date using the ISO_8601 format.</td>
+</tr>
+</tbody></table>
+<h2 id='readtouravailability'>readTourAvailability</h2><pre class="highlight plaintext"><code>curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -H "Authorization:Basic XXXXXXXXXXXXXXX==" \
+    'http://127.0.0.1:8036/read-tour-availability-STB-WOL14T-23-25-498-2017-10-06.json'
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"availability"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns an integer representing the number of places remaining on the specified trip.</p>
+<h3 id='query-parameters'>Query parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String</td>
+<td>Unique identifier for the tour.</td>
+</tr>
+<tr>
+<td>basis_id</td>
+<td>Integer</td>
+<td>Identifier for the basis.</td>
+</tr>
+<tr>
+<td>subbasis_id</td>
+<td>String</td>
+<td>Identifier for the subbasis.</td>
+</tr>
+<tr>
+<td>tour_time_id</td>
+<td>Integer</td>
+<td>Unique identifier for the tour time.</td>
+</tr>
+<tr>
+<td>tour_date</td>
+<td>Integer</td>
+<td>Date using the ISO_8601 format.</td>
+</tr>
+</tbody></table>
+<h2 id='readtouravailabilityrange'>readTourAvailabilityRange</h2><pre class="highlight plaintext"><code>curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -H "Authorization:Basic ZXhwZWRpYTE3MzM6OU1wY1plUjFWRWtTMWdkbQ==" \
+   -d '[
+       {
+          "host_id":"STB",
+          "tour_code":"WOL14T",
+          "basis_id":23,
+          "subbasis_id":25,
+          "tour_date":"2017-10-06",
+          "tour_time_id":1120
+       },
+       {
+          "host_id":"NECL",
+          "tour_code":"ET20",
+          "basis_id":9,
+          "subbasis_id":22,
+          "tour_date":"2017-10-06",
+          "tour_time_id":51
+       }
+   ]' \
+   'http://127.0.0.1:8036/read-price-range-ron2.json'
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"availabilities"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"tour_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ET20"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_time_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-06"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NECL:ET20:9:22:51:2017-10-06"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NECL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subbasis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"availability"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"tour_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WOL14T"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_time_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1120</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tour_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-06"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STB:WOL14T:23:25:1120:2017-10-06"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STB"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subbasis_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"availability"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This function allows the multiple availability queries to be processed in one call. The product list arrays are returned with the availability information appended. If any call produces a fault, the function continues running and returns the individual fault as part of the results. Note that availability ranges cannot include bus route availability. Each item in the product list must contain a host, tour code, basis id, subbasis id and time id.
+Two additional fields are returned on top of the individual availability call: boolTrip and boolThreshold.</p>
+
+<aside class="notice">
+    <b>trip</b>: Indicates if the tour is actually running on the day in question. If the availability is zero and trip is true, the tour is running but full. If the availability is zero and trip is false, the tour is not running on that day.
+</aside>
+
+<aside class="notice">
+    <b>threshold</b>: Indicates if the availability value has been capped by an operator threshold. If the availability is 10 and threshold is true, then there are greater than 10 seats but the operator only allows up to 10 to be visible. If the availability is 10 and threshold is false, then there really are only 10 seats remaining.
+</aside>
+<h3 id='post-payload-parameters-array-2'>Post Payload parameters ( array ):</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host_id</td>
+<td>String</td>
+<td>Unique identifier for the host.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String</td>
+<td>Unique identifier for the tour.</td>
+</tr>
+<tr>
+<td>basis_id</td>
+<td>Integer</td>
+<td>Identifier for the basis.</td>
+</tr>
+<tr>
+<td>subbasis_id</td>
+<td>String</td>
+<td>Identifier for the subbasis.</td>
+</tr>
+<tr>
+<td>tour_time_id</td>
+<td>Integer</td>
+<td>Unique identifier for the tour time.</td>
+</tr>
+<tr>
+<td>tour_date</td>
+<td>Integer</td>
+<td>Date using the ISO_8601 format.</td>
+</tr>
+</tbody></table>
+<h1 id='reservation'>Reservation</h1><h2 id='checkreservation'>checkReservation</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic XXXXXXXXXXXXXXX=="</span> <span class="se">\</span>
+   -d <span class="s1">'{
+       "reservation":{
+          "tour_code":"WOL14T",
+          "basis_id":23,
+          "subbasis_id":25,
+          "tour_date":"2016-10-06",
+          "tour_time_id":1120,
+          "pax_first_name":"Ademar",
+          "pax_last_name":"",
+          "num_pax_adults":200,
+          "num_pax_child":1
+       },
+       "payment":{
+          "payment_option":"full-ccardaa"
+       }
+   }'</span> <span class="se">\</span>
+   <span class="s1">'http://127.0.0.1:8036/check-reservation-STB.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:[</span><span class="w">
+        </span><span class="s2">"No pax last name provided for reservation."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Tour expiry prevents reservations for dates before Thursday, 24 August 2017."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Insufficient availability for the specified trip."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Invalid payment option: full-ccardaa"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Runs a series of precommit checks on a reservation without attempting to commit. See <a href="/#writereservation">writeReservation</a> for the structure of the reservation and payment array parameters. Returns an array of errors in the reservation. An empty array means no errors were found in the precommit check.</p>
+<h2 id='writereservation'>writeReservation</h2><pre class="highlight shell tab-shell"><code>curl -i -X POST <span class="se">\</span>
+   -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+   -H <span class="s2">"Authorization:Basic ZXhwZWRpYTE3MzM6OU1wY1plUjFWRWtTMWdkbQ=="</span> <span class="se">\</span>
+   -d <span class="se">\</span>
+<span class="s1">'{
+  "tickets": [
+    {
+      "tour_code": "WOL14T",
+      "basis_id": 23,
+      "subbasis_id": 25,
+      "time_id": 498,
+      "tour_date": "2017-09-23",
+      "passengers":[
+        {"type":1,"first_name":"Shaq", "last_name":"Test","extras":[12117, 12116]},
+        {"type":1,"first_name":"Test", "last_name":"Shaq","extras":[12116]}
+      ],
+      "transfers":{
+        "pickup":{
+          "pickup_id":67,
+          "route_code":"WOLBUSDT",
+          "pickup_time_id":41
+        },
+        "dropoff":null},
+      "email": "shaq@respax.com",
+      "promo_code": "AGENT50"
+    },
+    {
+      "tour_code": "AIR14T",
+      "basis_id": 100,
+      "subbasis_id": 142,
+      "time_id": 334,
+      "tour_date": "2017-09-25",
+      "passengers":[
+        {"type":1,"first_name":"Test", "last_name":"Test","extras":[15285, 15277]},
+        {"type":1,"first_name":"Shaq", "last_name":"Shaq", "extras":[15276]}
+      ],
+      "transfers":{
+        "pickup":{
+          "pickup_id":77,
+          "route_code":"AIRBUSLOCAL",
+          "pickup_time_id":291
+        },
+        "dropoff":null},
+      "email": "shaq@respax.com",
+      "promo_code": "AGENT50"
+    }
+  ]
+}'</span> <span class="se">\</span>
+ <span class="s1">'http://127.0.0.1:8036/write-reservation-STB.json'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The provider returned an empty or incomplete response."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Sends the details of the reservations array to the host and returns a confirmation number if the reservation is successfully committed. Provide a confirmation number of -1 to create a new reservation.
+<aside class="warning">
+    Updating an existing reservation is not supported at this time.
+</aside></p>
+
+<p>The previous system of writing pickups by manually providing strPickupRouteCode, intPickupRouteTimeID and intPickupID has been replaced with a single field strPickupKey. To specify that the reservation has no pickup you can do one of 4 things:
+1. Do not provide the strPickupKey field.
+2. Set strPickupKey field to null.
+3. Set strPickupKey field to an empty string.
+4. Set strPickupKey field to the string value 0:0:0.
+All these options assume you are no longer passing the individual pickup related fields.</p>
+
+<p>Payment defines how much money you are collecting in the booking. Payment options available to you when booking is determined by your Credit status with each operator. See <code>readPaymentOptions</code> for information on determining a valid payment option.</p>
+
+<p>Any payment option that has a &#39;ccard&#39; component must also pass the credit card details. This card will be charged by the host system. For all other payment options, the credit card data can be ignored.</p>
+<h3 id='post-payload-parameters'>Post Payload parameters:</h3><h3 id='reservation-2'>RESERVATION:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>???Shaq strCfmNo_Ext</td>
+<td>optional</td>
+<td>Reference to the reservation in a third party system.</td>
+</tr>
+<tr>
+<td>voucher_num</td>
+<td>optional</td>
+<td>Agent voucher number</td>
+</tr>
+<tr>
+<td>???agent_ref</td>
+<td>Mandatory</td>
+<td>The agent reference. This is normally not a free typed field in the interface but is instead stamped with the first and last name of the currently logged in user that is making the booking.</td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>Mandatory</td>
+<td>Tour code for the reservation.</td>
+</tr>
+<tr>
+<td>basis_id</td>
+<td>Mandatory</td>
+<td>Fare basis id for the reservation.</td>
+</tr>
+<tr>
+<td>subbasis_id</td>
+<td>Mandatory</td>
+<td>Fare subbasis (or type) id for the reservation.</td>
+</tr>
+<tr>
+<td>tour_date</td>
+<td>Mandatory</td>
+<td>String representation of the tour date for the reservation. (eg 04-APR-2013)</td>
+</tr>
+<tr>
+<td>tour_time_id</td>
+<td>Mandatory</td>
+<td>Departure time id for the reservation</td>
+</tr>
+<tr>
+<td>pax_first_name</td>
+<td>Mandatory</td>
+<td>The first name of the pax.</td>
+</tr>
+<tr>
+<td>pax_last_name</td>
+<td>Mandatory</td>
+<td>The last name of the pax.</td>
+</tr>
+<tr>
+<td>pax_email</td>
+<td>optional</td>
+<td>The contact email address of the pax.</td>
+</tr>
+<tr>
+<td>pax_mobile</td>
+<td>optional</td>
+<td>The mobile number or contact number of the pax.</td>
+</tr>
+<tr>
+<td>pax_country_id</td>
+<td>optional</td>
+<td>The passenger origin. Accepts intCountryID from readOrigins.</td>
+</tr>
+<tr>
+<td>pax_source_id</td>
+<td>optional</td>
+<td>The passenger source. Accepts intSourceID from readSources.</td>
+</tr>
+<tr>
+<td>num_pax_adults</td>
+<td>At least 1 of 5 Pax types must be selected</td>
+<td>Number of adult pax to be booked. (Pax type 1 when using custom pax labels from the operator.)</td>
+</tr>
+<tr>
+<td>num_pax_infant</td>
+<td>At least 1 of 5 Pax types must be selected</td>
+<td>Number of infant pax to be booked. (Pax type 2 when using custom pax labels from the operator.)</td>
+</tr>
+<tr>
+<td>num_pax_child</td>
+<td>At least 1 of 5 Pax types must be selected</td>
+<td>Number of child pax to be booked. (Pax type 3 when using custom pax labels from the operator.)</td>
+</tr>
+<tr>
+<td>num_pax_foc</td>
+<td>At least 1 of 5 Pax types must be selected</td>
+<td>Number of free of charge pax to be booked. (Pax type 4 when using custom pax labels from the operator.)</td>
+</tr>
+<tr>
+<td>num_pax_udef1</td>
+<td>At least 1 of 5 Pax types must be selected</td>
+<td>Number of user defined pax to be booked. (Pax type 5 when using custom pax labels from the operator.)</td>
+</tr>
+<tr>
+<td>general_comment</td>
+<td>optional</td>
+<td>The general comment.</td>
+</tr>
+<tr>
+<td>???Shaq ysnIsConfirmed</td>
+<td>optional</td>
+<td>Optional - By default it is set to -1 for confirmed bookings. Set it to zero for unconfirmed or open-dated bookings.</td>
+</tr>
+<tr>
+<td>???Shaq strPickupRoomNo</td>
+<td>optional</td>
+<td>Room number for pickup if applicable.</td>
+</tr>
+<tr>
+<td>???Shaq strPickupKey</td>
+<td>Optional for most Operators unless the Operators has Mandatory Pickup selected on a tour</td>
+<td>A concatenation of route code, route time id and pickup id.</td>
+</tr>
+</tbody></table>
+<h3 id='payment'>PAYMENT:</h3>
+<p>Name | Required | Description</p>
+<h2 id='cancelreservation'>cancelReservation</h2><pre class="highlight shell tab-shell"><code>
+</code></pre>
+<p>Cancels a reservation at the host with the specified confirmation number and updates the reservation with the cancellation reason. It returns the confirmation number if successful. A reservation must meet the following criteria to be able to be cancelled.
+* The reservation must not be cancelled.
+* No part of the reservation can be archived.
+* The reservation must not fall within the cutoff time for editing.
+* The reservation currency must match the authenticated agent&#39;s default currency.
+* None of the reservation payments can be archived.
+* All payments must be agent or pay on board payments.</p>
+<h1 id='glossary'>Glossary</h1>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Host_id</td>
+<td><a href="/#readhosts">Operator Identificator</a></td>
+</tr>
+<tr>
+<td>tour_code</td>
+<td>String identifier for the tour <a href="/#readtours">tour time</a>.</td>
+</tr>
+<tr>
+<td>tour_time_id</td>
+<td>Integer identifier for the <a href="/#readtourtimes">tour time</a>.</td>
+</tr>
+<tr>
+<td>basis_id</td>
+<td>Please describe better the <a href="/#readtourbases">basis</a>.</td>
+</tr>
+<tr>
+<td>subbasis_id</td>
+<td>Please describe better the <a href="/#readtourbases">subbasis</a>.</td>
+</tr>
+<tr>
+<td>thereshold</td>
+<td>Plase descibe better here!</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
 <p>The Kittn API uses the following error codes:</p>
